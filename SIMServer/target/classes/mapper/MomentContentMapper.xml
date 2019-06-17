@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="sim.mapper.MomentContentMapper" >
+  <resultMap id="BaseResultMap" type="sim.pojo.MomentContent">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="moment_id" jdbcType="VARCHAR" property="momentId" />
+    <result column="sender_id" jdbcType="VARCHAR" property="senderId" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="sendTime" jdbcType="TIMESTAMP" property="sendTime" />
+  </resultMap>
+
+</mapper>

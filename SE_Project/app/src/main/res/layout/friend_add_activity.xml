@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--主布局（纵向排列）-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:gravity="center"
+        android:background="@drawable/style2">
+        <TextView
+            android:id="@+id/add_friend_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textAllCaps="false"
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            android:text="Add Friend"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:background="#4169E1">
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        android:background="@color/aliceblue">
+
+        <!--输入框-->
+        <EditText
+            android:id="@+id/input_user_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:hint="id/name"
+            android:maxLines="2" />
+
+        <!--发送按钮-->
+        <Button
+            android:id="@+id/search_user"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="10dp"
+            android:background="@drawable/ooopic_1558497155"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
+    <!--聊天对话框部分
+      android:divider="#0000"透明分隔线-->
+    <ListView
+        android:id="@+id/user_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/aliceblue"
+        android:divider="#0000"/>
+
+    <!--输入框部分（横排排列）-->
+</LinearLayout>
+

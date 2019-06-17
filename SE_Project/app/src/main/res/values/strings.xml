@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">南科大聊天室</string>
+    <string name="IM_Server_Url">http://10.21.72.100:8081</string>
+    <string name="NMT_Server_Url">http://47.107.254.208:5000</string>
+    <string name="WebSocket_Server_Url">ws://10.21.72.100:8088/ws</string>
+    <string name="FSFD_Server_Url">http://47.107.254.208:88/sim/</string>
+    <string name="outside_name">Chatroom</string>
+    <string name="entry_button_name">Camera</string>
+    <string name="capture_button_description">Capture</string>
+    <string name="request_permission">This sample needs camera permission.</string>
+    <string name="camera_error">This device doesn\'t support Camera2 API.</string>
+    <string name="close_camera">取消</string>
+</resources>

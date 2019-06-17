@@ -1,0 +1,41 @@
+apply plugin: 'checkstyle'
+task checkstyle(type: Checkstyle) {
+    description 'Check code standard'
+    group 'verification'
+    configFile file('./code_quality_tools/checkstyle.xml')
+    source 'src/main'
+    include '**/*.java'
+    exclude '**/gen/**'
+    classpath = files()
+    ignoreFailures = false
+}
+apply plugin: 'pmd'
+task pmd(type: Pmd) {
+    description 'Run PMD'
+    group 'verification'
+    ruleSetFiles = files("./code_quality_tools/pmd.xml")
+    source 'src/main'
+    include '**/*.java'
+    exclude '**/gen/**'
+    reports {
+        xml.enabled = false
+        html.enabled = true
+    }
+    ignoreFailures = false
+}
+apply plugin: 'findbugs'
+task findbugs(type: FindBugs) {
+    description 'Run findbugs'
+    group 'verification'
+    classes = files("${project.rootDir}/app/build/intermediates/javac")
+    source 'src/main'
+    classpath = files()
+    effort 'max'
+    reportLevel = "high"
+    excludeFilter file('./code_quality_tools/findbugs-exclude.xml')
+    reports {
+        xml.enabled = false
+        html.enabled = true
+    }
+    ignoreFailures = false
+}

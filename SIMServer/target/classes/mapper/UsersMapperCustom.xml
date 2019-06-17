@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sim.mapper.UsersMapperCustom">
+
+  <select id="queryFriendRequestList" resultType="sim.pojo.vo.FriendRequestVO"
+          parameterType="String">
+
+		select
+			sender.id as sendUserId,
+			sender.username as sendUsername,
+			sender.nickname as sendNickname,
+			sender.gpa as sendGpa
+		from
+			friend_request fr
+		left join
+			users sender
+		on
+			fr.from_id = sender.id
+		where
+			fr.to_id = #{acceptUserId}
+
+	</select>
+
+
+  <select id="queryMyFriends" resultType="sim.pojo.vo.MyFriendsVO"
+          parameterType="String">
+
+		select
+			u.id as friendUserId,
+			u.username as friendUsername,
+			u.nickname as friendNickname,
+			u.gpa as friendGpa
+		from
+			friend_list mf
+		left join
+			users u
+		on
+			u.id = mf.friend_id
+		where
+			mf.owner_id = #{userId}
+	</select>
+
+	<select id="getMomentThumbUp" resultType="String"
+			parameterType="String">
+		select
+			u.username as thumber
+		from
+			users u
+		join
+			moment_thumb_up mtu
+		on
+			mtu.from_id = u.id
+		where
+			mtu.moment_id = #{momentId}
+		</select>
+
+
+	<select id="viewMoment" resultType="sim.pojo.MomentContent"
+			parameterType="String">
+            select
+				mc.moment_id as momentId,
+				mc.sender_id as senderId,
+				mc.content as content,
+				mc.send_time as sendTime
+			from
+				moment_content  mc
+			WHERE
+				mc.sender_id IN (
+				select
+					mf.friend_id as id
+				from
+					friend_list  mf
+				where
+					mf.owner_id = #{userId}
+			)
+				or
+				mc.sender_id = #{userId}
+			ORDER by
+				sendTime desc;
+	</select>
+
+
+	<!-- 批处理更新消息为已签收 -->
+	<update id="batchUpdateMsgSigned">
+
+		update chat_history set sign_flag = 1 where msg_id in
+		<foreach collection="list" item="item" index="index" open="(" separator="," close=")">
+			#{item}
+		</foreach>
+
+	</update>
+</mapper>

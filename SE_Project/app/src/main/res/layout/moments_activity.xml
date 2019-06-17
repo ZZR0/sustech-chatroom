@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/outside"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@drawable/sky2"
+            >
+            <ImageView
+            android:id="@+id/user_portait_moments"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginVertical="20dp"
+            android:layout_marginHorizontal="20dp"
+            android:src="@drawable/gpa0" />
+
+            <Button
+                android:id="@+id/edit_moment"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginHorizontal="10dp"
+                android:textColor="@color/white"
+                android:textSize="30dp"
+                android:background="@drawable/edit"
+                android:textAllCaps="false" />
+        </RelativeLayout>
+        <ListView
+            android:id="@+id/moments_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/aliceblue"
+            android:divider="#0000">
+        </ListView>
+
+        <!--输入框部分（横排排列）-->
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

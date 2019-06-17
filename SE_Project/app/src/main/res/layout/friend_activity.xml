@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--主布局（纵向排列）-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <!--<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="#4169E1">
+        <TextView
+            android:id="@+id/friend_list_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textAllCaps="false"
+            android:textSize="20dp"
+            android:text="Friends"/>
+
+    </LinearLayout> -->
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/style2"
+>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/style2"
+            android:orientation="vertical"
+            android:layout_marginHorizontal="10dp"
+            >
+
+            <ImageView
+                android:id="@+id/user_portrait"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginVertical="5dp"
+                android:layout_marginHorizontal="5dp"
+                android:src="@drawable/gpa0" />
+
+
+            <TextView
+                android:id="@+id/user_name2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/white"
+                android:text="奥巴马"
+                android:textAllCaps="false"
+                android:textSize="15dp" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/add_friend_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Friend"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+
+
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/aliceblue"/>
+    <!--聊天对话框部分
+      android:divider="#0000"透明分隔线-->
+    <ListView
+
+        android:id="@+id/friend_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/aliceblue"
+        android:divider="#0000"/>
+
+    <!--输入框部分（横排排列）-->
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/style3"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/add_activity"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:layout_centerVertical="true"
+            android:layout_marginHorizontal="40dp"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:background="@drawable/invite"
+            android:textAllCaps="false"
+            android:layout_alignParentLeft="true"/>
+        <Button
+            android:id="@+id/moments"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:layout_centerVertical="true"
+            android:layout_marginHorizontal="40dp"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:background="@drawable/moment"
+            android:textAllCaps="false"
+            android:layout_centerHorizontal="true"/>
+
+        <Button
+            android:id="@+id/search_friendlist"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginHorizontal="40dp"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:background="@drawable/refresh"
+            android:textAllCaps="false"
+            android:gravity="center" />
+    </RelativeLayout>
+
+</LinearLayout>
+
+
+

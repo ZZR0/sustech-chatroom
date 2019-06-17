@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sim.mapper.ChatHistoryMapper">
+  <resultMap id="BaseResultMap" type="sim.pojo.ChatHistory">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="msg_id" jdbcType="VARCHAR" property="msgId" />
+    <result column="from_id" jdbcType="VARCHAR" property="fromId" />
+    <result column="to_id" jdbcType="VARCHAR" property="toId" />
+    <result column="msg" jdbcType="VARCHAR" property="msg" />
+    <result column="send_time" jdbcType="TIMESTAMP" property="sendTime" />
+    <result column="sign_flag" jdbcType="INTEGER" property="signFlag" />
+    <result column="type" jdbcType="INTEGER" property="type" />
+  </resultMap>
+
+</mapper>
